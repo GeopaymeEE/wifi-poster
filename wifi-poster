@@ -1,0 +1,15 @@
+#!/bin/sh
+
+if [ $# -lt 4 ];
+then
+    echo "Usage: wifi-poster SSID password type output_file"
+    echo "E.g.: wifi-poster MyWiFi password WPA wifi.png"
+    exit
+fi
+
+INFO="WIFI:S:$1;T:$3;P:$2;;"
+DIR=`mktemp -d`
+
+qrencode "$INFO" -o "$DIR/qr.png"
+montage -geometry 1024 /usr/share/wifi-poster/data/wifi.png "$DIR/qr.png" $4
+rm -rf "$DIR"

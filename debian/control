@@ -1,0 +1,14 @@
+Source: wifi-poster
+Section: graphics
+Priority: optional
+Maintainer: Vadim Velikodniy <vadim@velikodniy.name>
+Build-Depends: debhelper (>= 8.0.0)
+Standards-Version: 3.9.3
+Homepage: http://github.com/velikodniy/wifi-poster
+
+Package: wifi-poster
+Architecture: all
+Depends: ${misc:Depends}, imagemagick, qrencode
+Description: Generates QR-encoded poster with parameters of WiFi network
+ Generates image with QR-encoded ESSID and password of WiFi network.
+ It may be useful for quick network setup on mobile devices.
